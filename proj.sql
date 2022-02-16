@@ -60,6 +60,23 @@ Create table disasters (
     		check (Dlevel >= 0 and Dlevel <5)
 );
 
+CREATE FUNCTION FindAffectedUsers(Disasters) RETURNS table (
+	FName varchar (20),
+	Minitial char (1),
+	Lname varchar (20),
+	Email varchar (50),
+	City int
+) AS $$
+declare
+	DS alias for $1;
+	cityid int;
+	urs Usr;
+BEGIN
+	  select Disasters.city into cityid from Disasters where Disasters.city = DS.city;
+	  return query select users.FName, users.Minitial, users.Lname, users.Email, users.City from users where users.city = cityid;
+END
+$$ LANGUAGE plpgsql;
+
 Create table Downed_Services (
 	id serial primary key,
 	disasterID int references disasters, 
@@ -101,9 +118,3 @@ Create table Relief_Aid (
 	Email varchar (50) not null,
 	city int not null references Cities
 ) inherits (services);
-
-
-
-
-
-
