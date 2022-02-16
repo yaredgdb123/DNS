@@ -1,0 +1,11 @@
+id ,city,dtype,dlevel,description
+1,1,2,1,Small tornado near ciity center 
+2,1,2,1,Small tornado near Akaki  Kaliti
+3,1,2,3,Heav tornado activity near Ayat
+4,2,1,3,Huge wildfire near city entrance. 
+5,2,1,3,Huge wildfire near city center. 
+6,3,3,2,Moderate flooding west of City center
+7,4,3,2,Moderate flooding west of City center
+8,4,3,4,Heavy flooding North of City center
+9,4,4,4,High power mains entering city are down
+10,5,4,4,High power mains entering city are down
