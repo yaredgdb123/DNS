@@ -124,23 +124,25 @@ create table service_short as
 	from services;
 	
 	
-create table AAUsers as
-	select * from Users
-	where city = 1;
+create table AAUsers (
+	primary key (id),
+	CHECK (city = 1)
+)inherits (Users);
 	
+create table NUsers (
+	primary key (id),
+	CHECK (city = 2)
+)inherits (Users);
+create table GUsers  (
+	primary key (id),
+	CHECK (city = 3)
+)inherits (Users);
+create table MUsers  (
+	primary key (id),
+	CHECK (city = 4)
+)inherits (Users);
+create table AUsers (
+	primary key (id),
+	CHECK (city = 5)
+)inherits (Users);
 	
-create table NUsers as
-	select * from Users
-	where city = 2;
-
-create table GUsers as
-	select * from Users
-	where city = 3;
-	
-create table MUsers as
-	select * from Users
-	where city = 4;
-	
-create table AUsers as
-	select * from Users
-	where city = 5;
