@@ -41,7 +41,7 @@ $$ LANGUAGE plpgsql;
 
 
 Create table services (
-	id serial primary key,
+	id int primary key,
 	details varchar(240) not null,
 	responce_time int,
 	Phone_1 int not null,
