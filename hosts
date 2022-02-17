@@ -2,3 +2,21 @@
 192.168.0.142   amex
 192.168.0.148   habib
 192.168.0.145   melica
+
+
+wget http://bucardo.org/downloads/Bucardo-5.4.1.tar.gz
+tar xvfz Bucardo-5.4.1.tar.gz
+cd Bucardo-5.4.1/
+perl Makefile.PL
+sudo make install
+
+sudo apt-get install postgresql-plperl-9.5
+
+sudo mkdir /var/run/bucardo
+sudo chmod 777 /var/run/bucardo
+
+create user bucardo superuser;
+create database bucardo;
+ALTER DATABASE bucardo OWNER TO bucardo;
+
+sudo bucardo install
