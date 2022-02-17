@@ -146,3 +146,12 @@ create table AUsers (
 	CHECK (city = 5)
 )inherits (Users);
 	
+	
+CREATE INDEX user_city_email on users(city,email);
+CREATE INDEX aauser_city_email on aausers(city,email);
+CREATE INDEX nuser_city_email on nusers(city,email);
+CREATE INDEX guser_city_email on gusers(city,email);
+CREATE INDEX muser_city_email on musers(city,email);
+CREATE INDEX auser_city_email on ausers(city,email);
+CREATE INDEX service_email_index on services(email);
+
