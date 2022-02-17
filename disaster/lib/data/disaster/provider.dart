@@ -14,53 +14,55 @@ class DisasterProvider extends ChangeNotifier {
       notifyListeners();
       await Future.delayed(const Duration(seconds: 2));
       // final response =
-      await DioHelper.dio.get("/disasters", queryParameters: {
+      final response = await DioHelper.dio.get("/disasters", queryParameters: {
         "page": page,
         "city": city,
       });
-      // final data = response.data.map((e) => DisasterModel.fromMap(e)).toList();
-      final data = [
-        DisasterModel(
-          city: "sa",
-          description:
-              "This is very big disaster ohhhhhhh no what has happened, I can't believe it.",
-          id: 1,
-          level: 2,
-          type: 5,
-        ),
-        DisasterModel(
-          city: "sa",
-          description:
-              "This is very big disaster ohhhhhhh no what has happened, I can't believe it.",
-          id: 2,
-          level: 2,
-          type: 5,
-        ),
-        DisasterModel(
-          city: "sa",
-          description:
-              "This is very big disaster ohhhhhhh no what has happened, I can't believe it.",
-          id: 3,
-          level: 2,
-          type: 5,
-        ),
-        DisasterModel(
-          city: "sa",
-          description:
-              "This is very big disaster ohhhhhhh no what has happened, I can't believe it.",
-          id: 4,
-          level: 2,
-          type: 5,
-        ),
-        DisasterModel(
-          city: "sa",
-          description:
-              "This is very big disaster ohhhhhhh no what has happened, I can't believe it.",
-          id: 5,
-          level: 2,
-          type: 5,
-        )
-      ];
+      final data = response.data
+          .map<DisasterModel>((e) => DisasterModel.fromMap(e))
+          .toList();
+      // final data = [
+      //   DisasterModel(
+      //     city: "sa",
+      //     description:
+      //         "This is very big disaster ohhhhhhh no what has happened, I can't believe it.",
+      //     id: 1,
+      //     level: 2,
+      //     type: 5,
+      //   ),
+      //   DisasterModel(
+      //     city: "sa",
+      //     description:
+      //         "This is very big disaster ohhhhhhh no what has happened, I can't believe it.",
+      //     id: 2,
+      //     level: 2,
+      //     type: 5,
+      //   ),
+      //   DisasterModel(
+      //     city: "sa",
+      //     description:
+      //         "This is very big disaster ohhhhhhh no what has happened, I can't believe it.",
+      //     id: 3,
+      //     level: 2,
+      //     type: 5,
+      //   ),
+      //   DisasterModel(
+      //     city: "sa",
+      //     description:
+      //         "This is very big disaster ohhhhhhh no what has happened, I can't believe it.",
+      //     id: 4,
+      //     level: 2,
+      //     type: 5,
+      //   ),
+      //   DisasterModel(
+      //     city: "sa",
+      //     description:
+      //         "This is very big disaster ohhhhhhh no what has happened, I can't believe it.",
+      //     id: 5,
+      //     level: 2,
+      //     type: 5,
+      //   )
+      // ];
 
       if (shouldReload) {
         disasters = data;

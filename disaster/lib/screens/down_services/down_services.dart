@@ -45,29 +45,25 @@ class _DownServicesState extends State<DownServices> {
                           Text("${e.id}"),
                         ),
                         DataCell(
-                          Text(e.serivce.details),
+                          Text(e.details),
                         ),
                         DataCell(
                           Text("${e.disasterId}"),
                         ),
                         DataCell(
-                          Text("${e.serivce.id}"),
+                          Text("${e.serivce}"),
                         ),
                         DataCell(
-                          Text(e.serivce.email),
+                          Text(e.email),
                         ),
                         DataCell(
-                          Text(
-                            e.serivce.phone_1,
-                          ),
+                          Text('${e.phone_1}'),
                         ),
                         DataCell(
-                          Text(
-                            e.serivce.phone_2,
-                          ),
+                          Text('${e.phone_2}'),
                         ),
                         DataCell(
-                          Text("${e.serivce.responseTime}"),
+                          Text("${e.responseTime}"),
                         ),
                         DataCell(
                           Text("${e.downTime.toUtc()}"),

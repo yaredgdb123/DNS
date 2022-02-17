@@ -30,6 +30,8 @@ class _LoginScreenState extends State<LoginScreen> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 TextFormField(
+                  autofillHints: const [AutofillHints.email],
+                  initialValue: "JackMJoe@gmail.com",
                   onSaved: (value) {
                     email = value;
                   },
@@ -51,6 +53,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 TextFormField(
                   obscureText: true,
+                  autofillHints: const [AutofillHints.password],
+                  initialValue: "1111",
                   validator: (value) {
                     if (value!.isEmpty) {
                       return "Password can't be empty";

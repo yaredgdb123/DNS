@@ -2,7 +2,7 @@ import 'dart:convert';
 
 class DisasterModel {
   int id;
-  String city;
+  int city;
   int type;
   int level;
   String description;
@@ -16,7 +16,7 @@ class DisasterModel {
 
   DisasterModel copyWith({
     int? id,
-    String? city,
+    int? city,
     int? type,
     int? level,
     String? description,
@@ -42,10 +42,10 @@ class DisasterModel {
 
   factory DisasterModel.fromMap(Map<String, dynamic> map) {
     return DisasterModel(
-      id: map['id']?.toInt() ?? 0,
-      city: map['city'] ?? '',
-      type: map['type']?.toInt() ?? 0,
-      level: map['level']?.toInt() ?? 0,
+      id: map['id'] ?? 0,
+      city: map['city'] ?? 0,
+      type: map['dtype'] ?? 0,
+      level: map['dlevel'] ?? 0,
       description: map['description'] ?? '',
     );
   }
