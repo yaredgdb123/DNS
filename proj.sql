@@ -70,7 +70,6 @@ CREATE FUNCTION FindAffectedUsers(Disasters) RETURNS table (
 declare
 	DS alias for $1;
 	cityid int;
-	urs Usr;
 BEGIN
 	  select Disasters.city into cityid from Disasters where Disasters.city = DS.city;
 	  return query select users.FName, users.Minitial, users.Lname, users.Email, users.City from users where users.city = cityid;
