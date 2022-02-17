@@ -3,6 +3,12 @@
 192.168.0.148   habib
 192.168.0.145   melica
 
+wget http://bucardo.org/downloads/Bucardo-5.4.1.tar.gz
+tar xvfz Bucardo-5.4.1.tar.gz
+cd Bucardo-5.4.1/
+perl Makefile.PL
+sudo make install
+
 
 wget http://bucardo.org/downloads/Bucardo-5.4.1.tar.gz
 tar xvfz Bucardo-5.4.1.tar.gz
