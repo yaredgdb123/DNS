@@ -117,3 +117,30 @@ Create table Relief_Aid (
 	Email varchar (50) not null,
 	city int not null references Cities
 ) inherits (services);
+
+
+create table service_short as 
+	select id, details, phone_1, city
+	from services;
+	
+	
+create table AAUsers as
+	select * from Users
+	where city = 1;
+	
+	
+create table NUsers as
+	select * from Users
+	where city = 2;
+
+create table GUsers as
+	select * from Users
+	where city = 3;
+	
+create table MUsers as
+	select * from Users
+	where city = 4;
+	
+create table AUsers as
+	select * from Users
+	where city = 5;
